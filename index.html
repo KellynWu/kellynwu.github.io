@@ -180,7 +180,7 @@
         <span class="state">Built</span>
         <span class="team">Team of 2</span>
       </div>
-      <p class="stack">STM32 · MicroPython · THAT2180C VCA · LM380N · CA3140 VU meter</p>
+      <p class="stack">STM32 · MicroPython · Python · NumPy · THAT2180C VCA · LM380N · CA3140 VU meter</p>
       <figure class="media portrait">
         <img src="assets/speaker-1.jpg" width="1050" height="1400" loading="lazy"
              alt="The audio amplifier built on breadboard, wired to the STM32 controller board, on the lab bench.">
@@ -193,9 +193,9 @@
         <div class="beat">
           <dt>My motivation</dt>
           <dd>
-            Most of the control systems I had studied were graphs on a screen. This one played
-            music, so when the loop was wrong it sounded wrong, and I knew before I looked at
-            anything.
+            This was a required module project, so I did not pick it. What kept me interested
+            was that most of the control systems I had studied were graphs on a screen. This one
+            played music, and gave me real world, practical exposure.
           </dd>
         </div>
         <div class="beat">
@@ -210,19 +210,32 @@
         <div class="beat">
           <dt>What I learnt</dt>
           <dd>
-            How to build each analog stage and only then combine them: a voltage-controlled
-            amplifier as the actuator, a power amplifier, and a peak-detector VU meter as the
-            sensor. Then the digital half: ADC and DAC over serial, a repeating timer, and a
-            step-up-down controller.
+            Analog side: a THAT2180C voltage-controlled amplifier as the actuator, an LM380N power
+            amplifier to drive the speaker, and a CA3140 rectifier and filter as the sensor,
+            turning the swinging audio signal into a steady DC level.
+          </dd>
+          <dd>
+            Digital side: an STM32 running MicroPython, its ADC (analog to digital converter)
+            reading that level and its DAC (digital to analog converter) setting the gain, with
+            Python, NumPy and Plotly doing the work on the computer.
           </dd>
         </div>
         <div class="beat">
           <dt>Takeaway</dt>
           <dd>
-            The datasheet's numbers are not your bench's numbers. The loop only behaved once I set
-            its limits from measuring my own circuit instead of copying the manual, and a
-            controller pushing past a limit it does not know about never throws an error. It just
-            quietly stops controlling.
+            In this project we were taught to build the components one at a time, and that is
+            honestly one of the most essential mindsets for thriving in any field. As a beginner I
+            thought solving a problem in one strike was better than breaking it into pieces.
+            Decomposition looked like a complicated process, and I figured people should just
+            solve the thing in one go. <b>I was wrong.</b>
+          </dd>
+          <dd>
+            With a complex problem, trying to solve everything at once usually ends the same way.
+            You get stuck debugging, which is where most of the time goes, until you either find
+            the bug or give up and rebuild the whole thing. Doing it in pieces, every stage had
+            already been measured on its own, so a fault in the finished system had somewhere
+            obvious to start. I knew what each block was supposed to do, and anything that did not
+            match could be pointed out easily. It made the process smoother and more efficient.
           </dd>
         </div>
       </dl>
