@@ -11,8 +11,7 @@ style.css                           stylesheet for the landing page (light + dar
 ```
 
 Each project is told in the same four beats, my motivation, what it solves, what I
-learnt and the takeaway, in my own words. Section 03 is the measured evidence, including the
-thing the drone cannot do.
+learnt and the takeaway, in my own words. Section 03 is the measured evidence.
 
 **Adding photos or video.** Every project has a `<figure class="media">` slot with a
 dashed placeholder. Drop the file in `assets/` and replace the `<div class="ph">…</div>`

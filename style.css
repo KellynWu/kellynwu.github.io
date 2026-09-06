@@ -232,11 +232,6 @@ section { padding: 5.5rem 0; border-top: 1px solid var(--hair); }
   margin-bottom: 0.6rem;
 }
 .fig span { display: block; font-size: 0.88rem; color: var(--soft); }
-.caveat {
-  margin: 3.2rem 0 0; padding-left: 1.4rem;
-  border-left: 2px solid var(--accent);
-  color: var(--soft); max-width: 38rem;
-}
 .numlead { color: var(--soft); max-width: 36rem; margin: 0 0 2.6rem; font-size: 1.06rem; }
 
 /* ---------- contact ---------- */
@@ -307,4 +302,3 @@ footer a:hover { color: var(--accent); }
 .proof .figs { grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 2rem 1.8rem; }
 .proof .fig b { font-size: clamp(1.9rem, 3.6vw, 2.5rem); }
 .proof .fig span { font-size: 0.83rem; }
-.proof .caveat { margin-top: 2.4rem; font-size: 0.95rem; }
