@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img"
+     aria-label="The same week shown twice. On the left, a timetable grid for week 11 with twenty-two blocks, in which a single graded lab is drawn exactly like the nine weekly classes around it. On the right, the message the system sends, which names that lab, says it is the only one all semester, and states plainly what it does not know.">
+  <style>
+    :root { color-scheme: light dark; }
+    .bg    { fill: #fbfbfa; }
+    .panel { fill: #ffffff; }
+    .sunk  { fill: #f2f3f1; }
+    .rule  { stroke: #e0e2e0; }
+    .ink       { fill: #16191d; }
+    .ink-soft  { fill: #4d545e; }
+    .ink-faint { fill: #7d858f; }
+    .accent      { fill: #0f5f6e; }
+    .accent-line { stroke: #0f5f6e; }
+    .accent-bg   { fill: #e6f1f2; }
+    .warn { fill: #8a5a12; }
+    .routine { fill: #eceeec; stroke: #e0e2e0; }
+    .lab     { fill: #ffe9c9; stroke: #d9a441; }
+    @media (prefers-color-scheme: dark) {
+      .bg    { fill: #101316; }
+      .panel { fill: #171b1f; }
+      .sunk  { fill: #1c2126; }
+      .rule  { stroke: #2a3036; }
+      .ink       { fill: #e8eaec; }
+      .ink-soft  { fill: #a8b0b8; }
+      .ink-faint { fill: #79828b; }
+      .accent      { fill: #5cc0ce; }
+      .accent-line { stroke: #5cc0ce; }
+      .accent-bg   { fill: #14282d; }
+      .warn { fill: #d3a45e; }
+      .routine { fill: #232a30; stroke: #2a3036; }
+      .lab     { fill: #4a3a1c; stroke: #a8802f; }
+    }
+    text { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+    .h  { font-size: 11px; letter-spacing: 0.11em; }
+    .d  { font-size: 10px; }
+    .t  { font-size: 9px; }
+    .m  { font-size: 12.5px; }
+    .mb { font-size: 12.5px; font-weight: 700; }
+    .cap { font-size: 11.5px; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="960" height="560"/>
+
+  <!-- ================= LEFT: the timetable ================= -->
+  <text class="h ink-faint" x="24" y="26">WHAT YOU ARE GIVEN</text>
+  <text class="d ink-soft" x="24" y="46">Week 11, as the timetable prints it</text>
+
+  <rect class="panel rule" x="24" y="60" width="424" height="424" rx="8" stroke-width="1.2"/>
+
+  <!-- day headers -->
+  <g class="t ink-faint">
+    <text x="96"  y="86" text-anchor="middle">MON</text>
+    <text x="164" y="86" text-anchor="middle">TUE</text>
+    <text x="232" y="86" text-anchor="middle">WED</text>
+    <text x="300" y="86" text-anchor="middle">THU</text>
+    <text x="368" y="86" text-anchor="middle">FRI</text>
+  </g>
+
+  <!-- hour rows -->
+  <g class="t ink-faint">
+    <text x="56" y="112" text-anchor="end">09</text>
+    <text x="56" y="160" text-anchor="end">10</text>
+    <text x="56" y="208" text-anchor="end">11</text>
+    <text x="56" y="256" text-anchor="end">12</text>
+    <text x="56" y="304" text-anchor="end">13</text>
+    <text x="56" y="352" text-anchor="end">14</text>
+    <text x="56" y="400" text-anchor="end">15</text>
+    <text x="56" y="448" text-anchor="end">16</text>
+  </g>
+  <g class="rule" stroke-width="0.7" opacity="0.75">
+    <line x1="64" y1="96"  x2="432" y2="96"/>
+    <line x1="64" y1="144" x2="432" y2="144"/>
+    <line x1="64" y1="192" x2="432" y2="192"/>
+    <line x1="64" y1="240" x2="432" y2="240"/>
+    <line x1="64" y1="288" x2="432" y2="288"/>
+    <line x1="64" y1="336" x2="432" y2="336"/>
+    <line x1="64" y1="384" x2="432" y2="384"/>
+    <line x1="64" y1="432" x2="432" y2="432"/>
+  </g>
+
+  <!-- ordinary blocks: every one of these repeats every week -->
+  <g stroke-width="1">
+    <rect class="routine" x="68"  y="100" width="56" height="88" rx="3"/>
+    <rect class="routine" x="68"  y="340" width="56" height="88" rx="3"/>
+    <rect class="routine" x="136" y="148" width="56" height="88" rx="3"/>
+    <rect class="routine" x="136" y="436" width="56" height="44" rx="3"/>
+    <rect class="routine" x="204" y="292" width="56" height="42" rx="3"/>
+    <rect class="routine" x="272" y="100" width="56" height="88" rx="3"/>
+    <rect class="routine" x="272" y="388" width="56" height="42" rx="3"/>
+    <rect class="routine" x="340" y="100" width="56" height="136" rx="3"/>
+    <rect class="routine" x="340" y="340" width="56" height="88" rx="3"/>
+
+    <!-- The one that matters, drawn deliberately the same as every other block.
+         Highlighting it here would answer the question the figure is asking. -->
+    <rect class="routine" x="204" y="340" width="56" height="136" rx="3"/>
+  </g>
+
+  <g class="t ink-soft">
+    <text x="96"  y="120">CS2040</text><text x="96"  y="132">LEC</text>
+    <text x="96"  y="360">PC1201</text><text x="96"  y="372">LEC</text>
+    <text x="164" y="168">MA2001</text><text x="164" y="180">LEC</text>
+    <text x="164" y="452">EG2401</text><text x="164" y="464">SEM</text>
+    <text x="232" y="308">CS2040</text><text x="232" y="320">TUT</text>
+    <text x="300" y="120">CS2100</text><text x="300" y="132">LEC</text>
+    <text x="300" y="404">MA2001</text><text x="300" y="416">TUT</text>
+    <text x="368" y="120">PC1201</text><text x="368" y="132">LAB</text>
+    <text x="368" y="360">GE1000</text><text x="368" y="372">LEC</text>
+  </g>
+  <g class="t ink-soft">
+    <text x="232" y="360">CS2100</text><text x="232" y="372">LAB</text>
+  </g>
+
+  <text class="t ink-faint" x="24" y="506">Twenty hours of class. One of these ten blocks happens</text>
+  <text class="t ink-faint" x="24" y="520">exactly once all semester and is graded. Nothing here</text>
+  <text class="t ink-faint" x="24" y="534">says which, and nothing tells you when you guess wrong.</text>
+
+  <!-- ================= arrow ================= -->
+  <g>
+    <line class="accent-line" x1="470" y1="272" x2="506" y2="272" stroke-width="1.4"/>
+    <path class="accent" d="M506 267 L516 272 L506 277 z"/>
+  </g>
+
+  <!-- ================= RIGHT: the message ================= -->
+  <text class="h ink-faint" x="536" y="26">WHAT ARRIVES ON SUNDAY</text>
+  <text class="d ink-soft" x="536" y="46">The same week, unasked for</text>
+
+  <rect class="panel rule" x="536" y="60" width="400" height="424" rx="8" stroke-width="1.2"/>
+
+  <text class="mb ink" x="558" y="94">Week 11 · 26 Oct – 1 Nov</text>
+
+  <text class="m ink-soft" x="558" y="130">Not your usual week:</text>
+
+  <rect class="accent-bg" x="548" y="140" width="376" height="52" rx="4"/>
+  <rect class="lab" x="548" y="140" width="3" height="52" stroke-width="0"/>
+  <text class="mb ink" x="562" y="158">• Wed 14:00 · CS2100 Lab</text>
+  <text class="m accent" x="574" y="178">This is the only one all semester.</text>
+
+  <text class="m ink-soft" x="558" y="214">• Fri 09:00 · PC1201 Lab</text>
+
+  <text class="m ink-soft" x="558" y="250">Assessed this week:</text>
+  <text class="m ink-soft" x="558" y="270">• Tue 10:00 · CS2040 Quiz 2</text>
+  <text class="m ink-soft" x="558" y="290">• Fri · MA2001 Assignment 3</text>
+
+  <text class="m ink-faint" x="558" y="326">Otherwise your usual 8 classes.</text>
+
+  <rect class="sunk" x="548" y="346" width="376" height="76" rx="4"/>
+  <text class="m warn" x="562" y="368">⚠ Still unknown, and it could be</text>
+  <text class="m warn" x="562" y="386">   this week</text>
+  <text class="t ink-soft" x="562" y="406">PC1201: the outline gives a week but no</text>
+  <text class="t ink-soft" x="562" y="418">day. I have not guessed one.</text>
+
+  <text class="t ink-faint" x="536" y="506">Four lines you read in six seconds. The rare thing is named</text>
+  <text class="t ink-faint" x="536" y="520">because it is rare, the routine is counted rather than listed,</text>
+  <text class="t ink-faint" x="536" y="534">and the gap in the paperwork is stated instead of filled in.</text>
+</svg>

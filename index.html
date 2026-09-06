@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kellyn Wu</title>
+<meta name="description" content="I am Kellyn, currently pursuing my undergrad in NTU EEE. I am seeking challenging and meaningful internship opportunities.">
+<meta property="og:title" content="Kellyn Wu">
+<meta property="og:description" content="Undergrad in NTU EEE. An autonomous underwater hull-inspection drone, a closed-loop audio amplifier, and a reminder bot that runs unattended.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kellynwu.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐦</text></svg>">
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap">
+    <a class="name" href="/">Kellyn Wu</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#building">Building</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" id="theme" type="button">Dark</button>
+  </div>
+</div>
+
+<header class="hero">
+  <img class="hero-img" src="assets/hero.jpg"
+       alt="Kellyn Wu standing in a school corridor lined with lockers"
+       width="2400" height="1350" fetchpriority="high">
+  <div class="hero-scrim" aria-hidden="true"></div>
+  <div class="wrap hero-inner">
+    <p class="kicker">Open to internships · Singapore</p>
+    <h1>Welcome to my web page.</h1>
+    <p>
+      My name is Kellyn, currently pursuing my undergrad in NTU EEE. I am seeking
+      challenging and meaningful internship opportunities.
+    </p>
+    <div class="meta">
+      <span>NTU · Electrical &amp; Electronic Engineering</span>
+      <a href="https://github.com/KellynWu">GitHub</a>
+      <a href="mailto:kellyn.wu123@gmail.com">kellyn.wu123@gmail.com</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ============ 01 ABOUT ============ -->
+  <section id="about" class="about">
+    <div class="head">
+      <span class="idx">/ 01</span>
+      <h2>About me</h2>
+    </div>
+    <p>
+      I want to add value to the world. To be precise, I want to help make it more productive.
+    </p>
+    <p>
+      I believe one way for a person to feel satisfied in life is to leave a footprint: to
+      build something that outlasts them. The human brain is more than a memorizing tool; it is
+      built for creation and imagination.
+    </p>
+    <p>
+      So here I am, using whatever resources I have to build something impactful.
+      <a class="inline" href="#projects">Come see my projects!</a>
+    </p>
+  </section>
+
+  <!-- ============ 02 PROJECTS ============ -->
+  <section id="projects">
+    <div class="head">
+      <span class="idx">/ 02</span>
+      <h2>Projects</h2>
+      <span class="note">built and finished</span>
+    </div>
+
+    <article class="proj">
+      <div class="top">
+        <h3>Underwater Hull Inspection Drone</h3>
+        <span class="state">Built</span>
+      </div>
+      <p class="stack">ROS 2 · C++ · Python · PCL · OpenCV · Kalman filter · Gazebo · Docker</p>
+      <!-- MEDIA SLOT: replace the <div class="ph"> with one of:
+             <img src="assets/hull-1.jpg" alt="describe what is shown">
+             <video src="assets/hull-1.mp4" controls muted loop playsinline poster="assets/hull-1.jpg"></video>
+      -->
+      <figure class="media" style="--ratio: 16 / 9">
+        <video src="assets/hull-1.mp4" poster="assets/hull-1.jpg"
+               controls muted loop playsinline preload="metadata"></video>
+        <figcaption>The drone surveying a hull it discovered itself.</figcaption>
+      </figure>
+      <dl class="beats">
+        <div class="beat">
+          <dt>My motivation</dt>
+          <dd>
+            I had always been wondering: would it be possible for a robot to automate itself,
+            without a human having to control it?
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>What it solves</dt>
+          <dd>
+            Underwater, things are more challenging. Not only we have to apply computer vision
+            in such a dark environment, we have to control the robot on water environment where
+            there is buoyancy effect taken place. On top of that, <b>my drone is never told the
+            hull's size or shape</b>. It has to discover the surface first, then plan its own
+            survey over it.
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>What I learnt</dt>
+          <dd>
+            Lots of cool tech stacks. PCL, OpenCV, tracking filters such as the Kalman filter,
+            plus ROS 2, C++, Gazebo and Docker.
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>Takeaway</dt>
+          <dd>
+            Such a good experience. It made me realise that humans have abilities we have taken
+            for granted, such as the ability to synchronise our sensory and actuator
+            capabilities. When I coded this project I always asked myself hard questions that
+            are very basic for a human, such as: <em>"um… how do I make the robot realise that
+            at this coordinate, there is a bump?"</em> (the answer is sonar and PCL). This
+            project enriched me in lots of ways, but mainly in mindset.
+          </dd>
+        </div>
+      </dl>
+      <div class="proof">
+        <p class="prooflead">
+          I did not want to just say that it works, so here is what was actually measured,
+          scored against the true answer the drone was never allowed to see.
+        </p>
+        <div class="figs">
+          <div class="fig">
+            <b>30/36</b>
+            <span>defects found, across three randomly generated defect layouts</span>
+          </div>
+          <div class="fig">
+            <b>8.2 cm</b>
+            <span>median error between where it said a defect was and where it really was</span>
+          </div>
+          <div class="fig">
+            <b>1.50 m</b>
+            <span>hull radius it worked out on its own: it fitted 1.491–1.509 m, and was never told</span>
+          </div>
+          <div class="fig">
+            <b>100%</b>
+            <span>of the hull covered, and the mission stopped by itself when it was done</span>
+          </div>
+          <div class="fig">
+            <b>140</b>
+            <span>tests, running in 22 seconds without the simulator</span>
+          </div>
+          <div class="fig">
+            <b>~13,400</b>
+            <span>lines of C++ and Python across 4 packages and 7 nodes</span>
+          </div>
+        </div>
+        <p class="caveat">
+          And what it cannot do: weld beads standing 3 cm proud are invisible to it. They sit inside
+          the sonar's own noise, so no setting finds them at all. I would rather write that down than
+          hide it.
+        </p>
+      </div>
+      <div class="more">
+        <a href="https://github.com/KellynWu/hull-inspection-auv">Source on GitHub</a>
+      </div>
+    </article>
+
+    <article class="proj">
+      <div class="top">
+        <h3>Automatic Volume Control Speaker</h3>
+        <span class="state">Built</span>
+        <span class="team">Team of 2</span>
+      </div>
+      <p class="stack">STM32 · MicroPython · THAT2180C VCA · LM380N · CA3140 VU meter</p>
+      <figure class="media portrait">
+        <img src="assets/speaker-1.jpg" width="1050" height="1400" loading="lazy"
+             alt="The audio amplifier built on breadboard, wired to the STM32 controller board, on the lab bench.">
+        <figcaption>
+          The three analog stages on breadboard, wired across to the controller board that
+          closes the loop.
+        </figcaption>
+      </figure>
+      <dl class="beats">
+        <div class="beat">
+          <dt>My motivation</dt>
+          <dd>
+            Most of the control systems I had studied were graphs on a screen. This one played
+            music, so when the loop was wrong it sounded wrong, and I knew before I looked at
+            anything.
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>What it solves</dt>
+          <dd>
+            Audio arrives at wildly different levels, and a human ends up riding the volume knob.
+            This takes the human out of that loop: a VU meter measures the real output level, the
+            computer compares it against a set point, and the amplifier's gain is nudged up or
+            down until they agree.
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>What I learnt</dt>
+          <dd>
+            How to build each analog stage and only then combine them: a voltage-controlled
+            amplifier as the actuator, a power amplifier, and a peak-detector VU meter as the
+            sensor. Then the digital half: ADC and DAC over serial, a repeating timer, and a
+            step-up-down controller.
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>Takeaway</dt>
+          <dd>
+            The datasheet's numbers are not your bench's numbers. The loop only behaved once I set
+            its limits from measuring my own circuit instead of copying the manual, and a
+            controller pushing past a limit it does not know about never throws an error. It just
+            quietly stops controlling.
+          </dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="proj">
+      <div class="top">
+        <h3>Second Brain</h3>
+        <span class="state">Running</span>
+      </div>
+      <p class="stack">TypeScript · Node.js · Telegram Bot API · Claude API · IMAP · systemd</p>
+      <figure class="media">
+        <img src="assets/timetable-vs-message.svg"
+             alt="The same week twice. On the left a timetable grid of ten class blocks, all drawn identically. On the right the message the system sends, which names the one lab that happens only once all semester and states what it does not know.">
+        <figcaption>
+          The same week, twice. On the left is what the timetable gives you, where the one graded
+          lab that happens once all semester is drawn exactly like the nine weekly classes around
+          it. On the right is what arrives on Sunday. Sample semester, real renderer.
+        </figcaption>
+      </figure>
+
+      <dl class="beats">
+        <div class="beat">
+          <dt>My motivation</dt>
+          <dd>
+            I had always felt that adding and editing calendar appointments takes so much mental
+            energy. Not only do we have to add a new reminder the moment we hear about it, or
+            else we forget it if we procrastinate, we also have to edit it whenever anything
+            changes. And we have to fill in everything manually: name, date, time, when to get
+            notified. <b>Some of that is so obvious, yet with today's tech we still type all of it
+            in by hand.</b>
+          </dd>
+          <dd>
+            And if we do not make a reminder, we risk forgetting. For a student, forgetting
+            something means losing marks. Based on a true story.
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>What it solves</dt>
+          <dd>
+            Second Brain takes note of appointments and reminders automatically through
+            Telegram. <b>Just forward and forget.</b> It detects and sections the type of
+            reminder by itself. It also holds the things that have no time on them at all, like
+            the shopping list and what to pack, which a calendar simply refuses to keep. Do try
+            it out.
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>What I learnt</dt>
+          <dd>
+            Telegram Bot API, TypeScript, Node.js, IMAP for the email route, reading PDFs and
+            phone photos with an LLM, and deploying under systemd so it keeps running when
+            nobody is watching.
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>Takeaway</dt>
+          <dd>
+            Being able to solve one of the main problems in my life has made me feel empowered and
+            confident. I had a lot of challenges while building this. I have no iOS developer
+            account, so I solved it by using a Telegram bot instead. That limitation ended up
+            making the design better, because <b>Telegram already has a share button and it is
+            already open on my phone.</b>
+          </dd>
+        </div>
+      </dl>
+      <div class="more">
+        <a href="https://github.com/KellynWu/second-brain">Source on GitHub</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ 03 BUILDING ============ -->
+  <section id="building">
+    <div class="head">
+      <span class="idx">/ 03</span>
+      <h2>Work in progress</h2>
+      <span class="note">no results to claim yet</span>
+    </div>
+
+    <article class="proj">
+      <div class="top">
+        <h3>Bird Classifier</h3>
+        <span class="state">In progress</span>
+        <span class="team">Group project</span>
+      </div>
+      <p class="stack">Spectrograms · CNN · BirdNET · PyTorch · Raspberry Pi · NTU forest</p>
+      <!-- MEDIA SLOT: replace the <div class="ph"> with one of:
+             <img src="assets/bird-1.jpg" alt="describe what is shown">
+             <video src="assets/bird-1.mp4" controls muted loop playsinline poster="assets/bird-1.jpg"></video>
+      -->
+      <figure class="media" style="--ratio: 16 / 9">
+        <img src="assets/bird-1.jpg"
+             alt="Illustration: a field recorder clipped to a branch identifying birdsong in a forest">
+        <figcaption>Concept illustration by AI: the recorder in the field.</figcaption>
+      </figure>
+      <dl class="beats">
+        <div class="beat">
+          <dt>My motivation</dt>
+          <dd>
+            I have always been wondering: how does a computer process audio into something
+            meaningful? How do you build an audio classifier from scratch when you have never
+            classified these sounds yourself, and there is no labelled dataset of <em>this</em>
+            forest on the internet that you can just take and train on?
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>What it solves</dt>
+          <dd>
+            It helps people who are beginners with birds tell apart the types of bird around NTU,
+            and it gives researchers a way to know which species are around without anyone having
+            to stand in the forest all day.
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>What I am learning</dt>
+          <dd>
+            Audio to spectrogram, CNNs, building and fine-tuning the model, and running it on a
+            Raspberry Pi out in the field.
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>Found so far</dt>
+          <dd>
+            The pretrained model we started from quietly drops species that are rare at a
+            location, and a migratory bird is rare at the location by definition. Its default
+            setting was deleting exactly the birds this project exists to find.
+          </dd>
+        </div>
+      </dl>
+    </article>
+
+    <article class="proj">
+      <div class="top">
+        <h3>Podcast Helper</h3>
+        <span class="state">Designing</span>
+      </div>
+      <p class="stack">LLM APIs · speech-to-text</p>
+      <!-- MEDIA SLOT: replace the <div class="ph"> with one of:
+             <img src="assets/podcast-1.jpg" alt="describe what is shown">
+             <video src="assets/podcast-1.mp4" controls muted loop playsinline poster="assets/podcast-1.jpg"></video>
+      -->
+      <figure class="media" style="--ratio: 16 / 9">
+        <img src="assets/podcast-1.jpg"
+             alt="Illustration: a listener pausing a podcast while an assistant explains a term">
+        <figcaption>Concept illustration by AI, asking a podcast what it just said.</figcaption>
+      </figure>
+      <dl class="beats">
+        <div class="beat">
+          <dt>My motivation</dt>
+          <dd>
+            As a beginner in tech, it is really hard to understand the podcasts that are out
+            there. There are so many terminologies and jargons I have never heard, and my
+            background knowledge is still far too short compared to the idea they want to convey.
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>What it solves</dt>
+          <dd>
+            I am building this podcast assistant to help me understand podcasts better. It is like
+            a friend that watches the podcast together with me, so we can pause the video
+            sometimes and talk about what is happening. Writing the problems down first taught me
+            something useful: some of them are things I would never think to ask about, like a
+            familiar word being used in a technical way. So the assistant also has to speak up on
+            its own, not only answer when I ask.
+          </dd>
+        </div>
+        <div class="beat">
+          <dt>What I will learn</dt>
+          <dd>
+            AI and APIs, speech-to-text with timestamps, and how to ground an answer in what has
+            actually been said in the episode rather than what the model happens to know.
+          </dd>
+        </div>
+      </dl>
+      <div class="more">
+        <a href="https://github.com/KellynWu/podcast-helper">Source on GitHub</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- ============ 04 CONTACT ============ -->
+  <section id="contact">
+    <div class="head">
+      <span class="idx">/ 04</span>
+      <h2>Say hello</h2>
+    </div>
+    <div class="routes">
+      <div class="route">
+        <h3>Like-minded individuals</h3>
+        <p>If you are building something too, let's have a chat.</p>
+        <a class="btn ghost" href="https://t.me/kellynwu">Message me on Telegram</a>
+      </div>
+      <div class="route">
+        <h3>Employers &amp; opportunities</h3>
+        <p>If you are hiring or have an opportunity, contact me here.</p>
+        <a class="btn" href="mailto:kellyn.wu123@gmail.com?subject=Internship%20opportunity">Email me</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span>Kellyn Wu · Singapore</span>
+    <span>
+      <a href="https://github.com/KellynWu">GitHub</a> ·
+      <a href="mailto:kellyn.wu123@gmail.com">Email</a>
+    </span>
+  </footer>
+
+</div>
+
+<script>
+  (function () {
+    var root = document.documentElement, btn = document.getElementById('theme');
+    var saved = null;
+    try { saved = localStorage.getItem('theme'); } catch (e) {}
+    if (saved) root.setAttribute('data-theme', saved);
+    function isDark() {
+      var t = root.getAttribute('data-theme');
+      if (t) return t === 'dark';
+      return matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    function label() { btn.textContent = isDark() ? 'Light' : 'Dark'; }
+    label();
+    btn.addEventListener('click', function () {
+      var next = isDark() ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      label();
+    });
+  })();
+</script>
+
+</body>
+</html>
