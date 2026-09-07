@@ -311,3 +311,56 @@ footer a:hover { color: var(--accent); }
   hyphens: auto;
   -webkit-hyphens: auto;
 }
+
+/* ---------- contact form ---------- */
+
+.contact-grid {
+  display: grid; grid-template-columns: 1.4fr 1fr;
+  gap: 3.5rem; align-items: start;
+}
+.formlead { color: var(--soft); margin: 0 0 2rem; max-width: 32rem; }
+
+.cform .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; }
+.cform .field { margin: 0 0 1.1rem; display: flex; flex-direction: column; gap: 0.45rem; }
+.cform label {
+  font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--faint);
+}
+.cform input[type="text"], .cform input[type="email"], .cform textarea {
+  width: 100%; padding: 0.7rem 0.85rem;
+  font-family: var(--sans); font-size: 0.98rem; line-height: 1.5; color: var(--ink);
+  background: var(--panel); border: 1px solid var(--rule); border-radius: 3px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.cform textarea { resize: vertical; min-height: 9rem; }
+.cform input:focus, .cform textarea:focus {
+  outline: none; border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 16%, transparent);
+}
+.cform input:-webkit-autofill {
+  -webkit-text-fill-color: var(--ink);
+  -webkit-box-shadow: 0 0 0 30px var(--panel) inset;
+}
+
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+
+.formfoot { display: flex; align-items: center; gap: 1.1rem; flex-wrap: wrap; margin-top: 0.4rem; }
+.cform button.btn { border: 0; cursor: pointer; }
+.cform button.btn[disabled] { opacity: 0.55; cursor: default; }
+
+.cf-status { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--faint); }
+.cf-status.good { color: var(--accent); }
+.cf-status.bad { color: #b3452f; }
+.cf-status a { color: inherit; border-bottom: 1px solid currentColor; }
+:root[data-theme="dark"] .cf-status.bad { color: #e08b72; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .cf-status.bad { color: #e08b72; }
+}
+
+.routes-side .route + .route { margin-top: 2.6rem; }
+.routes-side .addr { margin-top: 0; }
+
+@media (max-width: 46rem) {
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .cform .row { grid-template-columns: 1fr; gap: 0; }
+}

@@ -417,18 +417,62 @@
       <span class="idx">/ 04</span>
       <h2>Say hello</h2>
     </div>
-    <div class="routes">
-      <div class="route">
-        <h3>Like-minded individuals</h3>
-        <p>If you are building something too, let's have a chat.</p>
-        <a class="btn ghost" href="https://t.me/kellynwu">Message me on Telegram</a>
+    <div class="contact-grid">
+
+      <div class="formwrap">
+        <p class="formlead">
+          If you are hiring, building something, or just want to talk, write to me
+          here. It goes straight to my inbox and I reply from my own address.
+        </p>
+
+        <form id="contact-form" class="cform" action="https://api.web3forms.com/submit" method="POST">
+
+          <!-- Get a free key at https://web3forms.com and paste it below. -->
+          <input type="hidden" name="access_key" value="db83c5a4-3e45-4e14-8550-b1feda0645a0">
+          <input type="hidden" name="from_name" value="kellynwu.com">
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div class="row">
+            <p class="field">
+              <label for="cf-name">Name</label>
+              <input id="cf-name" name="name" type="text" autocomplete="name" required>
+            </p>
+            <p class="field">
+              <label for="cf-email">Email</label>
+              <input id="cf-email" name="email" type="email" autocomplete="email" required>
+            </p>
+          </div>
+
+          <p class="field">
+            <label for="cf-subject">Subject</label>
+            <input id="cf-subject" name="subject" type="text" required>
+          </p>
+
+          <p class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="7" required></textarea>
+          </p>
+
+          <div class="formfoot">
+            <button class="btn" type="submit" id="cf-send">Send message</button>
+            <span class="cf-status" id="cf-status" role="status" aria-live="polite"></span>
+          </div>
+        </form>
       </div>
-      <div class="route">
-        <h3>Employers &amp; opportunities</h3>
-        <p>If you are hiring or have an opportunity, contact me here.</p>
-        <a class="btn" href="mailto:kellyn.wu123@gmail.com?subject=Internship%20opportunity">Email me</a>
-        <p class="addr">or write to <a href="mailto:kellyn.wu123@gmail.com">kellyn.wu123@gmail.com</a></p>
-      </div>
+
+      <aside class="routes-side">
+        <div class="route">
+          <h3>Prefer your own inbox?</h3>
+          <p>Write to me directly, no form in the way.</p>
+          <p class="addr"><a href="mailto:kellyn.wu123@gmail.com">kellyn.wu123@gmail.com</a></p>
+        </div>
+        <div class="route">
+          <h3>Building something too?</h3>
+          <p>For anything quick and informal, Telegram is faster.</p>
+          <a class="btn ghost" href="https://t.me/kellynwu">Message me on Telegram</a>
+        </div>
+      </aside>
+
     </div>
   </section>
 
@@ -460,6 +504,47 @@
       root.setAttribute('data-theme', next);
       try { localStorage.setItem('theme', next); } catch (e) {}
       label();
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var form = document.getElementById('contact-form');
+    if (!form) return;
+    var status = document.getElementById('cf-status');
+    var send = document.getElementById('cf-send');
+    var FALLBACK = 'That did not send. Please email me at '
+      + '<a href="mailto:kellyn.wu123@gmail.com">kellyn.wu123@gmail.com</a>.';
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      status.className = 'cf-status';
+      status.textContent = 'Sending...';
+      send.disabled = true;
+
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+
+      fetch(form.action, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(function (r) {
+          return r.json().then(function (j) { return { ok: r.ok, body: j }; });
+        })
+        .then(function (res) {
+          if (!res.ok || !res.body.success) throw new Error('rejected');
+          form.reset();
+          status.className = 'cf-status good';
+          status.textContent = 'Thank you, that reached me. I will reply soon.';
+        })
+        .catch(function () {
+          status.className = 'cf-status bad';
+          status.innerHTML = FALLBACK;
+        })
+        .then(function () { send.disabled = false; });
     });
   })();
 </script>
