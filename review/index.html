@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIP bird review</title>
+<style>
+  :root { color-scheme: light dark; --fg:#1a1a1a; --bg:#fafafa; --card:#fff; --line:#e3e3e3; --link:#1456b8; }
+  @media (prefers-color-scheme: dark){ :root{ --fg:#e8e8e8; --bg:#161616; --card:#1e1e1e; --line:#333; --link:#6fb0ff; } }
+  body{ margin:0; font:16px/1.55 system-ui,sans-serif; color:var(--fg); background:var(--bg); }
+  main{ max-width:680px; margin:0 auto; padding:28px 18px 60px; }
+  h1{ font-size:1.4rem; margin:0 0 4px; } .sub{ color:#888; margin:0 0 22px; }
+  ol{ list-style:none; padding:0; margin:0; display:grid; gap:10px; }
+  a.card{ display:flex; justify-content:space-between; align-items:center; gap:12px; text-decoration:none;
+          background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; color:var(--fg); }
+  a.card:hover{ border-color:var(--link); } a.card b{ color:var(--link); } .tag{ font-size:.8rem; color:#999; }
+  .note{ background:var(--card); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-top:22px; font-size:.92rem; }
+  .note b{ display:block; margin-bottom:6px; } code{ background:rgba(128,128,128,.15); padding:1px 5px; border-radius:4px; }
+</style></head><body><main>
+<h1>DIP bird call review</h1>
+<p class="sub">Open the page with your name. One clip per screen, five buttons, about 15 minutes.</p>
+<ol id="list"></ol>
+<div class="note"><b>When you finish</b>
+Your answers save in your browser as you go. On the last screen press <b>Export CSV</b> and send that file
+back to Kellyn. Nothing is uploaded automatically, so the export is how your work gets counted.</div>
+<div class="note"><b>What you are judging</b>
+Does our 3-second recording sound like the reference recordings of the bird named? You are not naming the
+species, just comparing. "Not a bird" and "different bird" are useful answers, not failures.</div>
+</main>
+<script>
+const people = ["kellyn","jinyu","ethan","haojuen","zhongyuan","seojun","xishun"];
+const list = document.getElementById("list");
+for (const p of people){
+  const a = document.createElement("a");
+  a.className = "card"; a.href = "review_" + p + "_tm.html";
+  a.innerHTML = '<span>Review for <b>'+ p.charAt(0).toUpperCase()+p.slice(1) +'</b></span><span class="tag">open &rarr;</span>';
+  list.appendChild(a);
+}
+</script></body></html>
